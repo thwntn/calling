@@ -1,0 +1,16 @@
+.frameHome {
+    position: absolute;
+    z-index: 0;
+    color: #fff;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+.image {
+    height: 705px;
+    background-image: url(https://wallpapershome.com/images/pages/pic_h/12336.jpg);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-content: center;
+}

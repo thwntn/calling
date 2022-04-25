@@ -1,0 +1,79 @@
+.frameHistory {
+    color: #666;
+    padding-top: 32px;
+    z-index: 2;
+    background-color: #fff;
+}
+.item {
+    width: 90%;
+    padding: 12px;
+    animation: aniItem 0.3s ease;
+}
+@keyframes aniItem {
+    from {
+        transform: translateX(10%);
+        opacity: 0.5s;
+    } to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+}
+.title h2 {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.title button {
+    border: none;
+    background: none;
+    padding: 0px 8px;
+    width: auto !important;
+    margin-top: -2px;
+}
+.frameHistory h2 {
+    font-weight: 600;
+    padding-left: 12px;
+}
+.frameScroll {
+    overflow: auto;
+    height: 705px;
+}
+.phone {
+    display: flex;
+    align-content: center;
+    font-weight: 600;
+    font-size: 10px;
+    margin-top: 8px !important;
+}
+.frameTime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 12px;
+}
+.item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.name {
+    width: 100%;
+    display: inline-block !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.image div {
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+}
+.time {
+    font-size: 10px;
+    padding: 0px 8px !important;
+}
