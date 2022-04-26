@@ -4,3 +4,11 @@
 2 history
 3 calling
 4 contact
+
+
+
+//db
+
+dbs name "gCall"
+collection name "user"
+import file "user.json"

@@ -1,15 +1,15 @@
 var mongodb = require('mongodb')
 var express = require('express')
-var cors = require('cors')
-var bp = require('body-parser')
 
 let app = express()
 
 //header & parse body
-app.use(bp.json())
-app.use(bp.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
     next();
 });
 
@@ -26,24 +26,37 @@ mongoClient.connect(uri, function(err, db) {
 
     let dbo = db.db("gCall");
 
-    
-
-    app.get('/login', function(req, res) {
-    })
     app.post('/login', function(req, res) {
+
         console.log(req.body);
+
+        dbo.collection('user').find({userName: {$eq: req.body.userName}, password: {$eq: req.body.password}, webSocket: {$eq: req.body.webSocket}}).toArray(function(err, result) {
+            if(err) throw err; else {
+                if(result.length != 0) {
+                    res.send({
+                        status: result.length != 0,
+                        userName: req.body.userName,
+                        webSocket: req.body.webSocket,
+                        password: req.body.password
+                    })
+                } else {
+                    res.send(false)
+                }
+            }
+        })
+        // dbo.collection('user').find({}).toArray(function(err, result) {
+        //     if(err) throw err; else {
+        //         if(result.length != 0) {
+        //             console.log(result);
+        //         } else {
+        //             res.send(false)
+        //         }
+        //     }
+        // })
         
     })
-    db.close()
-
-
-    app.listen(3300)
+    app.listen(8080)
 })
 
-//slelect all data
+//select all data
 
-// dbo.collection('user').find({username: {$eq: "105"}, password: {$eq: "tet1105"}}).toArray(function(err, result) {
-//     if(err) throw err; else {   
-//         res.send(result.length == 0)
-//     }
-// })

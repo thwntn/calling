@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "626750913e3bf6d9d1f3fb54"
+  },
+  "userName": "105",
+  "password": "test1105",
+  "webSocket": "wss://sbc03.tel4vn.com:7444"
+},{
+  "_id": {
+    "$oid": "626750a63e3bf6d9d1f3fb55"
+  },
+  "userName": "106",
+  "password": "test1106",
+  "webSocket": "wss://sbc03.tel4vn.com:7444"
+},{
+  "_id": {
+    "$oid": "626750ac3e3bf6d9d1f3fb56"
+  },
+  "userName": "107",
+  "password": "test1107",
+  "webSocket": "wss://sbc03.tel4vn.com:7444"
+},{
+  "_id": {
+    "$oid": "626750b33e3bf6d9d1f3fb57"
+  },
+  "userName": "108",
+  "password": "test1108",
+  "webSocket": "wss://sbc03.tel4vn.com:7444"
+},{
+  "_id": {
+    "$oid": "626750ba3e3bf6d9d1f3fb58"
+  },
+  "userName": "109",
+  "password": "test1109",
+  "webSocket": "wss://sbc03.tel4vn.com:7444"
+}]

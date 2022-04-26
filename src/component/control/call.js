@@ -1,14 +1,20 @@
 const JsSIP = require('jssip')
 
 
+// handle info
+let webSocket = sessionStorage.getItem('webSocket')
+let url = `${sessionStorage.getItem('userName')}@2-test1.gcalls.vn:50061`
+let password = sessionStorage.getItem('password')
+
 function Call(phone, setState, prev) {
   let preDisplay = prev
-  console.log(prev);
-  var socket = new JsSIP.WebSocketInterface('wss://sbc03.tel4vn.com:7444');
+  var socket = new JsSIP.WebSocketInterface(webSocket);
+  console.log(sessionStorage.getItem('webSocket'));
+  console.log(sessionStorage.getItem('userName'));
   var configuration = {
   sockets  : [ socket ],
-  uri      : '105@2-test1.gcalls.vn:50061',
-  password : 'test1105'
+  uri      : url,
+  password: 'test1105'
   };
 
 
@@ -39,7 +45,6 @@ function Call(phone, setState, prev) {
       'ended': function(e) {
         console.log('call ended with cause: '+ e);
         setState(preDisplay);
-
       },
       'confirmed': function(e) {
         alert(e.cause);

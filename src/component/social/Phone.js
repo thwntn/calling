@@ -20,6 +20,14 @@ function Phone() {
     const [phone, setPhone] = useState('')
     const [state, setState] = useState(0)
 
+    //check Info
+    useEffect(() => {
+        if( sessionStorage.getItem('userName') == undefined && sessionStorage.getItem('webSocket') == undefined && sessionStorage.getItem('password') == undefined) {
+        alert('Re-login');
+        window.location.href = 'http://localhost:3000'
+        }
+    })
+    
     useEffect(() => {
         function handle () {
             if(frame.current.getBoundingClientRect().top < 250) {
